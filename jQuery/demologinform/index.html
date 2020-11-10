@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+</head>
+<body>
+    <div id="wrapper">
+        <form action="#" method="post">
+            <nav>
+                <li>Login</li>
+                <li>Signup</li>
+            </nav>
+
+            <div class="content active">
+                <p><input type="text" class="username" placeholder="Enter your Name"></p>
+                <p><input type="password" class="pwd" placeholder="Enter your password"></p>
+                <p><input type="button" class="submit" value="Đăng nhập"></p>
+            </div>
+
+            <div class="content">
+                <p><input type="text" id="username" placeholder="Enter your Name"></p>
+                <p><input type="password" class="pwd" placeholder="Enter your password"></p>
+                <p><input type="password" class="pwd2" placeholder="Xác nhận pss"></p>
+                <p><input type="button" class="submit" value="Đăng Ký"></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../jquery.js"></script>
+    <script>
+
+        $(function() {
+            function loginForm() {
+                // lấy tab
+                var $navLi = $('nav li'), 
+                    $content = $('form .content');
+
+                // them chuc nang eq()
+
+                // console.log($navLi)
+                $navLi.on('click', function() {
+                    var $thisIndex = $(this).index()
+                    // console.log($thisIndex);
+                    $content.eq($thisIndex).addClass('active').siblings('.content').removeClass('active')             
+                
+                })
+
+                // console.log($content)
+
+            }
+
+            loginForm();
+        })
+
+    </script>
+</body>
+</html>
+
+
+<!-- 
+
+    1. console.log() / alert()
+    2. select [css như thế nào thì nó như thế ]
+    3. em muốn làm gì? tiếng anh các từ khóa tiếng anh liên quan 
+    4. Hiểu về DOM Document -> Objects -> Model / BOM / DOM 
+    5. Ligic if else 
+ -->

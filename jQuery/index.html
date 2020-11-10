@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Cơ bản</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .red {
+            color: red;
+        }
+
+        span.show {
+    width: 30px;
+    height: 20px;
+    background: #009688;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    </style>
+
+    <script src="jquery.js"></script>
+
+    <script> 
+        $(function() {
+            var $li = $('ul li');
+            // change color li 
+            function changeLiColor() {
+                
+                $li.on('click', function() {
+                    // add vào li đang được click 
+                    $(this).addClass('red').siblings().removeClass('red').parents('body').find('li').first().removeClass('red')        
+                    
+                    // Minh Minh Minh Minh Minh
+
+                })
+
+                $li.last().on('click', function() {
+                    $('body').find('li').first().addClass('red')
+                })
+
+                $('.show').on('click', function() {
+                    // if kiểm tra đều kiện 
+                    if( $('.show').hasClass('fa-eye-slash')) {
+                        $(this).attr('class', 'show fa-eye fa')
+                         $('.pwd').attr('type', 'password')
+                    } else {
+                        $(this).attr('class', 'show fa-eye-slash fa')
+                        $('.pwd').attr('type', 'text')
+                    }
+                })
+            }
+
+            // DOM Ready 
+            $(document).ready(function(){
+                changeLiColor();
+            });
+        })
+        
+        
+
+    </script>
+</head>
+<body>
+
+    <li>Hello World!</li>
+    
+    <h1 class="h1" id="h1"> jQuery <span>Cơ bản</span></h1>
+
+    
+    <div class="input-wrap">
+        <input class="pwd" type="password" placeholder="Nhập mật khẩu của bạn">
+        <span class="show fa fa-eye"> </span>
+    </div>
+
+    <div>
+        <ul>
+            <h3>Hello h3</h3>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
+

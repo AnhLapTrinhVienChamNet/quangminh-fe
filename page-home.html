@@ -14,22 +14,14 @@
                     <div class="row align-center">
                         <div id="logo">
                             <a href="#">
-                                <img src="imgs/logo.png" alt="logo">
+                                <img :src="logo" alt="logo">
                             </a>
                         </div><!-- #logo -->
 
                         <div class="top-right text-right align-center flex-box justify-content-end">
                             <div class="top-socials">
-                                <a href="#">
-                                    <img src="imgs/facebook-icon.png" alt="facebook">
-                                </a>
-
-                                <a href="#">
-                                    <img src="imgs/zalo-icon.png" alt="zalo">
-                                </a>
-
-                                <a href="#">
-                                    <img src="imgs/instagram-icon.png" alt="instagram">
+                                <a :href="hinh.link" target="blank" v-for="hinh in mxh">
+                                    <img :src="hinh.icon" alt="">
                                 </a>
                             </div><!-- /.top-socials -->
 
@@ -49,6 +41,23 @@
             </section>
         </header>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        new Vue({
+            el: '#root',
+            data: {
+                logo: 'https://lh3.googleusercontent.com/a-/AOh14Gh54wlH62d_63C94MffkliMypVvrZVttAo4AFeh=s88-c-k-c0x00ffffff-no-rj-mo',
+                mxh: [
+                    {icon: 'imgs/facebook-icon.png', link: 'https://www.facebook.com/thanh.isaac/'},
+                    {icon: 'imgs/zalo-icon.png', link: 'https://chat.zalo.me/'},
+                    {icon: 'imgs/instagram-icon.png'},
+                ]
+            }
+        })
+    </script>
 </body>
 </html>
 
